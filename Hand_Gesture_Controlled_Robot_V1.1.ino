@@ -1,5 +1,5 @@
 /*
-* Gesture Recognition Robot - Avishkar
+* Gesture Recognition Robot V1.1 - Avishkar
 * Coder - Mayoogh Girish
 * Website - http://bit.do/Avishkar
 * This program lets you to control your robot with gesture made by your hand
