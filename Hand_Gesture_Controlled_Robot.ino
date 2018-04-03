@@ -35,18 +35,18 @@
 3) Open serial                         [Ctlr + Shift + M]
 4) Tilt the sensor in +X, -X, +Y ,-Y direction (forward, backward, left, right) and note down the required x y 
 5) Now change the 
-      #define forward xxx with new +X value                                       
-      #define backward xxx with new -X value
-      #define left xxx with new +Y value
-      #define right xxx with new -Y value
+      #define forward_val xxx with new +X value                                       
+      #define backward_val xxx with new -X value
+      #define left_val xxx with new +Y value
+      #define right_val xxx with new -Y value
       
 */
 //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°//
 
-#define forward 340       // Change this value to change senstivity for forward direction     /-Default 340-/  *X*
-#define backward 400      // Change this value to change senstivity for backward direction   /-Default 400-/   *X*
-#define left 340          // Change this value to change senstivity for left direction      /-Default 340-/    *Y*
-#define right 400         // Change this value to change senstivity for right direction    /-Default 400-/     *Y*
+#define forward_val 340       // Change this value to change senstivity for forward direction     /-Default 340-/  *X*
+#define backward_val 400      // Change this value to change senstivity for backward direction   /-Default 400-/   *X*
+#define left_val 340          // Change this value to change senstivity for left direction      /-Default 340-/    *Y*
+#define right_val 400         // Change this value to change senstivity for right direction    /-Default 400-/     *Y*
                                                           
 int GNDPin = A4; //Set Analog pin 4 as GND
 int VccPin = A5; //Set Analog pin 5 as VCC
@@ -74,13 +74,13 @@ void loop()
   x = analogRead(xPin); //Reads X coordinates
   y = analogRead(yPin); //Reads Y coordinates
   z = analogRead(zPin); //Reads Z coordinates (Not Used)
-    if(x<forward)      // Change the value for adjusting sensitivity  
+    if(x<forward_val)      // Change the value for adjusting sensitivity  
       forward();
-    else if(x>backward) // Change the value for adjusting sensitivity
+    else if(x>backward_val) // Change the value for adjusting sensitivity
       backward();
-    else if(y>right) // Change the value for adjusting sensitivity
+    else if(y>right_val) // Change the value for adjusting sensitivity
       right();
-    else if(y<left) // Change the value for adjusting sensitivity
+    else if(y<left_val) // Change the value for adjusting sensitivity
       left();
     else
       stop_();
