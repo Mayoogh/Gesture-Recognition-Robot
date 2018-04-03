@@ -3,12 +3,56 @@
 * Coder - Mayoogh Girish
 * Website - http://bit.do/Avishkar
 * This program lets you to control your robot with gesture made by your hand
+
+
+                                ADXL335
+                           —————————————————¬                                 
+                          |Ø            Z   Ø|                                  
+                          |      X<---•      |                   
+                          |           |      |                                  
+                          |           |Y     |                                  
+                          |           ∨      |
+                          |                  |
+                          |                  |
+                          | O  O  O  O  O  O |
+                           —————————————————¬
+                            ST Z  Y  X  -  +
+                                                                            Right
+                                                                              ∧
+                                                                              |
+                                                                              |
+                                                               Forward <------|------>Backward
+                                                                              |
+                                                                              |
+                                                                              ∨
+                                                                             Left
+          FOLLOW THIS INSTRUCTION TO CALIBRATE ROBOT
+
+1) Upload ADXL3xx Sketch from examples [ File >> Examples >> Sensor >> AdXL3xx ]
+2] Connect the sensor the arduino      [ X --> PIN A3
+                                         Y --> PIN A2
+                                         Z --> PIN A1 ]
+3) Open serial                         [Ctlr + Shift + M]
+4) Tilt the sensor in +X, -X, +Y ,-Y direction (forward, backward, left, right) and note down the required x y 
+5) Now change the 
+      #define forward xxx with new +X value                                       
+      #define backward xxx with new -X value
+      #define left xxx with new +Y value
+      #define right xxx with new -Y value
+      
 */
-int GNDPin=A4; //Set Analog pin 4 as GND
-int VccPin=A5; //Set Analog pin 5 as VCC
-int xPin=A3; //X axis input
-int yPin=A2; //Y axis input
-int zPin=A1; //Z axis input(not used)
+//°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°//
+
+#define forward 340       // Change this value to change senstivity for forward direction     /-Default 340-/  *X*
+#define backward 400      // Change this value to change senstivity for backward direction   /-Default 400-/   *X*
+#define left 340          // Change this value to change senstivity for left direction      /-Default 340-/    *Y*
+#define right 400         // Change this value to change senstivity for right direction    /-Default 400-/     *Y*
+                                                          
+int GNDPin = A4; //Set Analog pin 4 as GND
+int VccPin = A5; //Set Analog pin 5 as VCC
+int xPin   = A3; //X axis input
+int yPin   = A2; //Y axis input
+int zPin   = A1; //Z axis input(not used)
 int Q1=10,Q2=11,Q3=12,Q4=13; //Output pins to be connected to 10, 11, 12, 13 of Decoder IC
 long x; //Variabe for storing X coordinates
 long y; //Variabe for storing Y coordinates
@@ -41,6 +85,9 @@ void loop()
     else
       stop_();
 }
+
+//Functions
+
 void stop_()
 {
   Serial.println("");
