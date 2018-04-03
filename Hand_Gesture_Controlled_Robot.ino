@@ -74,13 +74,13 @@ void loop()
   x = analogRead(xPin); //Reads X coordinates
   y = analogRead(yPin); //Reads Y coordinates
   z = analogRead(zPin); //Reads Z coordinates (Not Used)
-    if(x<340)      // Change the value for adjusting sensitivity  
+    if(x<forward)      // Change the value for adjusting sensitivity  
       forward();
-    else if(x>400) // Change the value for adjusting sensitivity
+    else if(x>backward) // Change the value for adjusting sensitivity
       backward();
-    else if(y>400) // Change the value for adjusting sensitivity
+    else if(y>right) // Change the value for adjusting sensitivity
       right();
-    else if(y<340) // Change the value for adjusting sensitivity
+    else if(y<left) // Change the value for adjusting sensitivity
       left();
     else
       stop_();
