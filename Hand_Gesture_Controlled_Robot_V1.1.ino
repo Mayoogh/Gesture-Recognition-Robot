@@ -29,7 +29,7 @@
           FOLLOW THIS INSTRUCTION TO CALIBRATE ROBOT
 
 1) Upload ADXL3xx Sketch from examples [ File >> Examples >> Sensor >> AdXL3xx ]
-2] Connect the sensor the arduino      [ X --> PIN A3
+2] Connect the sensor to arduino       [ X --> PIN A3
                                          Y --> PIN A2
                                          Z --> PIN A1 ]
 3) Open serial                         [Ctlr + Shift + M]
