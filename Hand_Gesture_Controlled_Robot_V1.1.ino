@@ -6,7 +6,7 @@
 
 
                                 ADXL335
-                           —————————————————¬                                 
+                           ———————————¬                                 
                           |Ø            Z   Ø|                                  
                           |      X<---•      |                   
                           |           |      |                                  
@@ -15,7 +15,7 @@
                           |                  |
                           |                  |
                           | O  O  O  O  O  O |
-                           —————————————————¬
+                           ———————————¬
                             ST Z  Y  X  -  +
                                                                             Right
                                                                               ∧
@@ -53,7 +53,9 @@ int VccPin = A5; //Set Analog pin 5 as VCC
 int xPin   = A3; //X axis input
 int yPin   = A2; //Y axis input
 int zPin   = A1; //Z axis input(not used)
+
 int Q1=10,Q2=11,Q3=12,Q4=13; //Output pins to be connected to 10, 11, 12, 13 of Decoder IC
+
 long x; //Variabe for storing X coordinates
 long y; //Variabe for storing Y coordinates
 long z; //Variabe for storing Z coordinates
